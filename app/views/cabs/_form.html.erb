@@ -1,0 +1,23 @@
+<h2>Cab Details</h2>
+
+<%= form_with model: @cab do |f| %>
+<div class="field">
+    <%= f.label :cab_name %><br/>
+    <%= f.text_field :cab_name, autofocus: true, autocomplete: "cab_name" %>
+</div>
+
+<div class="field">
+    <%= f.label :cab_route %><br/>
+    <%= f.text_field :cab_route, autofocus: true, autocomplete: "cab_route" %>
+</div>
+
+<div class="field">
+    <%= f.label :cab_number %><br/>
+    <%= f.text_field :cab_number, autofocus: true, autocomplete: "cab_number" %>
+</div>
+
+<div class="actions">
+    <%= f.submit "Submit" %>
+</div>
+
+<% end %>
