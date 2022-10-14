@@ -33,6 +33,13 @@ class CabsController < ApplicationController
     end
 	end
 
+  def loged_in_driver_cab
+    # byebug
+    a = current_user.driver
+    @cab = a.cabs
+    redirect_to loged_in_driver_cabs_path 
+  end
+
 	private
   def cab_params
       params.require(:cab).permit(:cab_name, :cab_route, :cab_number, :driver_id)
