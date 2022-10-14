@@ -5,10 +5,10 @@ ActiveAdmin.register DriverRequest do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :name, :email, :status
+  permit_params :name, :email, :status
   # permit_params :email, :password
   #
-  # or
+  # or 
   #
   # permit_params do
   #   permitted = [:name, :email, :status]

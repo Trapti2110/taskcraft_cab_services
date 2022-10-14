@@ -1,6 +1,6 @@
 class CabsController < ApplicationController
   def index
-    byebug
+    # byebug
     @cab = Cab.all
 
     me = current_user         # shows current user which is signed in.
@@ -14,11 +14,12 @@ class CabsController < ApplicationController
   end
 
   def show
+    # byebug
     @cab = Cab.find(params[:id])
   end
 
 	def create
-    
+    # byebug
     @cab = Cab.create(cab_name: params['cab']['cab_name'],
       cab_route: params['cab']['cab_route'], cab_number: params['cab']['cab_number'],
       driver_id: current_user.driver.id)

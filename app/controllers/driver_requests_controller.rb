@@ -8,7 +8,6 @@ class DriverRequestsController < ApplicationController
     if @driver_request.save
       flash[:success] = "Thanks! I'll be in touch soon!"
       redirect_to 'driver_request_path'
-
     else
       render 'new_driver_request_path'
     end
