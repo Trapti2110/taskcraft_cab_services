@@ -1,0 +1,26 @@
+<h1>Customer all cabs</h1>
+
+<table>
+  <tr>
+    <th>Cab_id</th>
+    <th>cab_name</th>
+    <th>cab_route</th>
+    <th>cab_number</th>
+    <th>Show cab</th>
+  </tr>
+  <% @cab.each do |cab| %>
+  <tr>
+   <td><%= cab.id %></td>
+   <td>Driver cab name: <%= cab.cab_name %></td>
+   <td>Driver cab route: <%= cab.cab_route %></td>
+   <td>Driver cab number: <%= cab.cab_number %></td>
+   <td><%= link_to 'View',cab_path(cab) %></td>
+  </tr>
+<% end %>
+</table>
+
+<ul>
+  <li><%= link_to "Sign in", user_session_path %></li>
+  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  <li><%= link_to "Active admin page", admin_driver_requests_path %></li>
+</ul>

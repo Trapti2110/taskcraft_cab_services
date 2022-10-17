@@ -1,18 +1,18 @@
 <h1><strong>Cabs show page</strong></h1>
-<%#= simple_form_for(@cab) do |cab| %>
-<h2>Driver cab name: <%= @cab.cab_name %></h2>
-<h2>Driver cab route: <%= @cab.cab_route %></h2>
-<h2>Driver cab number: <%= @cab.cab_number %></h2>
+ <%#= @cab.each do |cab| %>
+<h3>Driver cab name: <%= @cab.cab_name %></h3>
+<h3>Driver cab route: <%= @cab.cab_route %></h3>
+<h3>Driver cab number: <%= @cab.cab_number %></h3>
 
 <%#= link_to 'Create new cab',cab_path(@cab)%><br>
-<%= link_to 'Create new cab','/cabs/new'%><br>
-
 
 <ul>
-  <li><%= link_to "Edit", edit_cab_path(@cab) %></li>
-  <li><%= link_to "Destroy", cab_path(@cab), data: {
+  <li><%= link_to 'Back', new_cab_path %></li>
+  <li><%= link_to 'Create new cab','/cabs/new'%></li>
+  <!-- <li><#%= link_to "Edit", edit_cab_path(@cab) %></li>
+  <li><%#= link_to "Destroy", cab_path(@cab), data: {
                         turbo_method: :delete,  
                         turbo_confirm: 'Are you sure?'
-                      } %></li>
-</ul>  
+                      } %></li> -->
+  </ul>  
 

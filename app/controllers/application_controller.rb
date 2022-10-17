@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     if current_admin_user   # can also run without .admin?
       admin_driver_requests_path
     elsif driver.is_driver == true
-      new_cab_path
+      loged_in_driver_cabs_path
     else
       cabs_path
     end

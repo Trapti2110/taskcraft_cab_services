@@ -1,11 +1,11 @@
 class CabsController < ApplicationController
   def index
-    # byebug
+    #byebug
     @cab = Cab.all
 
-    me = current_user         # shows current user which is signed in.
-    c = Cab.find(me)
-    @cab = c.time_cabs
+    # me = current_user         # shows current user which is signed in.
+    # c = Cab.find(me)
+    # @cab = c.time_cabs
   end
   
   def new
@@ -14,7 +14,7 @@ class CabsController < ApplicationController
   end
 
   def show
-    # byebug
+      # byebug
     @cab = Cab.find(params[:id])
   end
 
@@ -33,11 +33,32 @@ class CabsController < ApplicationController
     end
 	end
 
+  def edit
+    @cab = Cab.find(params[:id])
+  end
+
+  def update
+    @cab = Cab.find(params[:id])
+
+    if @cab.update(cab_params)
+      redirect_to cab_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def loged_in_driver_cab
-    # byebug
+     # byebug
     a = current_user.driver
     @cab = a.cabs
-    redirect_to loged_in_driver_cabs_path 
+    # redirect_to loged_in_driver_cabs_path 
+  end
+
+  def destroy
+    @cab = Cab.find(params[:id])
+    @cab.destroy
+
+    # redirect_to cabs_path, status: :see_other
   end
 
 	private
