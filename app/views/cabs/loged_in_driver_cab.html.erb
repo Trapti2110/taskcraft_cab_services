@@ -10,7 +10,7 @@
     <th>Edit cab</th>
     <th>Destroy cab</th>
   </tr>
-  <% @cab.each do |cab| %>
+  <% @cab.each do |cab| %> 
   <tr>
    <td><%= cab.id %></td>
    <td>Driver cab name: <%= cab.cab_name %></td>
@@ -26,5 +26,6 @@
 <ul>
   <li><%= link_to "Sign in", user_session_path %></li>
   <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  <li><%= link_to "See customer request",show_request_path %></li>
   <li><%= link_to "Active admin page", admin_driver_requests_path %></li>
 </ul>

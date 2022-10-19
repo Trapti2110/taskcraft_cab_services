@@ -9,9 +9,9 @@ class CabsController < ApplicationController
   end
 
   def cab_request
-    byebug
-    CabUser.create(cab_id: params['id'],user_id: current_user.id)
-    redirect_to cabs_path
+     # byebug
+    @cabuser = CabUser.create(cab_id: params['id'],user_id: current_user.id)
+    redirect_to cabs_path 
   end
   
   def new
@@ -59,8 +59,6 @@ class CabsController < ApplicationController
     @cab = a.cabs
     # redirect_to loged_in_driver_cabs_path 
   end
-
-  
 
   def destroy
     @cab = Cab.find(params[:id])

@@ -4,7 +4,7 @@ class DriverRequestsController < ApplicationController
   end
 
   def show
-      # byebug
+    # byebug
     @driver_request = DriverRequest.find(params[:id])
   end
 
@@ -17,6 +17,12 @@ class DriverRequestsController < ApplicationController
       render 'new_driver_request_path'
     end
 	end
+
+  def show_request 
+    byebug                 #changes 
+    c = CabUser.find(params[:id])
+    @cabuser = c.status
+  end
 
   def edit
     @driver_request = DriverRequest.find(params[:id])

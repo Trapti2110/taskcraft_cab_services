@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     else
       cabs_path
     end
-  end
+  end 
 
   def configure_permitted_parameters 
   	# binding.pry

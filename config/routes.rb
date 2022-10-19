@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :cabs
   get "loged_in_driver_cabs", to: "cabs#loged_in_driver_cab"
   get 'cab_request/:id', to: 'cabs#cab_request', as:'cab_request'
+  get 'show_request', to: "driver_requests#show_request"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
  
