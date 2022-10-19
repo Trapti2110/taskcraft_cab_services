@@ -3,6 +3,11 @@ class DriverRequestsController < ApplicationController
 		@driver_request = DriverRequest.new
   end
 
+  def show
+      # byebug
+    @driver_request = DriverRequest.find(params[:id])
+  end
+
   def create
     @driver_request = DriverRequest.create(driver_params)
     if @driver_request.save
@@ -21,10 +26,9 @@ class DriverRequestsController < ApplicationController
     if @driver_request.update(driver_params)
       redirect_to 'driver_request_path'
     else
-     render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
-
 
 # def create
 #     @driver_request = DriverRequest.new(driver_params)

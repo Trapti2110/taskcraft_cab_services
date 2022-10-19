@@ -15,6 +15,7 @@
    <td>Driver cab route: <%= cab.cab_route %></td>
    <td>Driver cab number: <%= cab.cab_number %></td>
    <td><%= link_to 'View',cab_path(cab) %></td>
+   <td><%= link_to 'Request', cab_request_path(cab) %></td>
   </tr>
 <% end %>
 </table>
