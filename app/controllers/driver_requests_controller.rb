@@ -19,9 +19,17 @@ class DriverRequestsController < ApplicationController
 	end
 
   def show_request 
-    byebug                 #changes 
-    c = CabUser.find(params[:id])
-    @cabuser = c.status
+    # byebug                  
+    @cabuser = Cab.where(driver_id: current_user.driver.id).pluck(:id)
+    @cabrequest = CabUser.where(cab_id: @cabuser)
+  end
+
+  def customer_request_approve
+    # byebug
+    # @cabrequest = CabUser.find_by(params[:id])
+    # @cabrequest.status == "Approved")
+    #   render 'customer_request_approve_path'
+    #   flash[:notice] = "Application has been approved"
   end
 
   def edit

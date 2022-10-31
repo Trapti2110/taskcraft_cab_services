@@ -46,6 +46,8 @@ GEM
       kaminari (~> 1.0, >= 1.2.1)
       railties (>= 6.0, < 7.1)
       ransack (>= 2.1.1, < 4)
+    activeadmin_blaze_theme (1.0.0)
+      activeadmin (~> 2.0)
     activejob (6.0.6)
       activesupport (= 6.0.6)
       globalid (>= 0.3.6)
@@ -263,6 +265,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activeadmin_blaze_theme
   activestorage
   bootsnap (>= 1.4.2)
   byebug
@@ -274,6 +277,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.6)
   sass-rails (>= 6)
+  sassc
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)

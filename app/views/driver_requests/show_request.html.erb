@@ -1,14 +1,19 @@
-<h1>See request</h1>
+<h2>Customer Request Page</h2>
 <table>
   <tr>
-  	<th>Cab_id</th>
-    <th>User_id</th>
-    <th>status</th>
+    <th>cabuser_id</th>
+    <th>cab_id</th>
+    <th>user_id</th>
+  	<th>status</th>
   </tr>
-
+  <%#byebug %>
+  <% @cabrequest.each do |cabuser| %> 
   <tr>
-    <td>Driver cab name: <%= @cabuser.cab_id %></td>
-    <td>Driver cab route: <%= @cabuser.user_id %></td> 
-    <td>Driver cab number: <%= @cabuser.status %></td>
+    <td><%= cabuser.id %></td>
+    <td><%= cabuser.cab_id %></td>
+    <td><%= cabuser.user_id %></td>
+    <td><%= cabuser.status %></td>
+    <td><%= link_to "Approve",customer_request_approve_path(cabuser) %></td>
   </tr>
+  <% end %>
 </table>

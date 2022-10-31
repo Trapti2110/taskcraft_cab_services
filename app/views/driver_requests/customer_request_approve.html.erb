@@ -1,0 +1,17 @@
+<h2>Approved requests</h2>
+<table>
+  <tr>
+    <th> cabuser_id</th>
+    <th> cab_id</th>
+    <th> user_id</th>
+  	<th> status</th>
+  </tr>
+  <%#byebug %>
+  <tr>
+    <td><%= @cabre.id %></td>
+    <td><%= @cabre.cab_id %></td>
+    <td><%= @cabre.user_id %></td>
+    <td><%= @cabre.status %></td>
+    <td><%= link_to "Approve",customer_request_approve_path(@cabre) %></td>
+  </tr>
+</table>

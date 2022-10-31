@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry'
 gem 'activeadmin'
 gem 'activestorage'
+gem 'activeadmin_blaze_theme'
+gem 'sassc'

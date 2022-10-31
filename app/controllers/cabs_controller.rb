@@ -11,7 +11,7 @@ class CabsController < ApplicationController
   def cab_request
      # byebug
     @cabuser = CabUser.create(cab_id: params['id'],user_id: current_user.id)
-    redirect_to cabs_path 
+    redirect_to cabs_path
   end
   
   def new
