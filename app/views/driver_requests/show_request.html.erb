@@ -7,13 +7,13 @@
   	<th>status</th>
   </tr>
   <%#byebug %>
-  <% @cabrequest.each do |cabuser| %> 
+  <% @cabrequest.each do |cabrequest| %> 
   <tr>
-    <td><%= cabuser.id %></td>
-    <td><%= cabuser.cab_id %></td>
-    <td><%= cabuser.user_id %></td>
-    <td><%= cabuser.status %></td>
-    <td><%= link_to "Approve",customer_request_approve_path(cabuser) %></td>
+    <td><%= cabrequest.id %></td>
+    <td><%= cabrequest.cab_id %></td>
+    <td><%= cabrequest.user_id %></td>
+    <td><%= cabrequest.status %></td>
+    <td><%= link_to "Approve",customer_request_approve_url(cabrequest.cab_id,cabrequest.user_id) %></td>
   </tr>
   <% end %>
 </table>

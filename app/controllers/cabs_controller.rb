@@ -1,6 +1,5 @@
 class CabsController < ApplicationController
   def index
-    #byebug
     @cab = Cab.all
 
     # me = current_user         # shows current user which is signed in.
@@ -8,8 +7,8 @@ class CabsController < ApplicationController
     # @cab = c.time_cabs
   end
 
-  def cab_request
-     # byebug
+  def cab_request 
+    # byebug
     @cabuser = CabUser.create(cab_id: params['id'],user_id: current_user.id)
     redirect_to cabs_path
   end
@@ -20,12 +19,10 @@ class CabsController < ApplicationController
   end
 
   def show
-      # byebug
     @cab = Cab.find(params[:id])
   end
 
 	def create
-    # byebug
     @cab = Cab.create(cab_name: params['cab']['cab_name'],
       cab_route: params['cab']['cab_route'], cab_number: params['cab']['cab_number'],
       driver_id: current_user.driver.id)
@@ -54,7 +51,6 @@ class CabsController < ApplicationController
   end
 
   def loged_in_driver_cab
-     # byebug
     a = current_user.driver
     @cab = a.cabs
     # redirect_to loged_in_driver_cabs_path 

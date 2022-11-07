@@ -1,4 +1,4 @@
-a# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,7 +10,7 @@ a# This file is auto-generated from the current state of the database. Instead
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_123117) do
+ActiveRecord::Schema.define(version: 2022_11_07_093557) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2022_10_18_123117) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
-    t.integer "cab_id", null: false
     t.integer "status", default: 0
+    t.integer "cab_id", null: false
     t.index ["cab_id"], name: "index_cab_users_on_cab_id"
     t.index ["user_id"], name: "index_cab_users_on_user_id"
   end
@@ -82,9 +82,9 @@ ActiveRecord::Schema.define(version: 2022_10_18_123117) do
     t.integer "cab_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "cab_route"
+    t.string "cab_name"
     t.integer "driver_id", null: false
-    t.string "cab_route", default: "f"
-    t.string "cab_name", default: "f"
     t.index ["driver_id"], name: "index_cabs_on_driver_id"
   end
 

@@ -1,4 +1,4 @@
-<h1>Customer all cabs</h1>
+<h2>Customer all cabs</h2>
 
 <table>
   <tr>
@@ -6,7 +6,6 @@
     <th>cab_name</th>
     <th>cab_route</th>
     <th>cab_number</th>
-    <th>Show cab</th>
   </tr>
   <% @cab.each do |cab| %>
   <tr>
@@ -14,16 +13,19 @@
    <td>Driver cab name: <%= cab.cab_name %></td>
    <td>Driver cab route: <%= cab.cab_route %></td>
    <td>Driver cab number: <%= cab.cab_number %></td>
-   <td><%= link_to 'View',cab_path(cab) %></td>
-   <td><%= link_to 'Request', cab_request_path(cab) %></td>
+   <td><%= button_to 'View',cab_path(cab), method: :get %></td>
+   <td><%= button_to 'Request', cab_request_path(cab), method: :get %></td>
   </tr>
 <% end %>
 </table>
 
 <ul>
-  <li><%= link_to "Sign in", user_session_path %></li>
-  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-  <li><%= link_to "Active admin page", admin_driver_requests_path %></li>
+  <%= link_to "Sign in", user_session_path %><br>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %><br>
+  <%= link_to "See customer request",show_request_path %><br>
+  <%= link_to 'Create new cab','/cabs/new'%><br>
+  <%= link_to "Create new driver", new_driver_request_path %><br>
+  <%= link_to "Active admin page", admin_driver_requests_path %>
 </ul>
 
 <!-- cab_request_path(cab) -->

@@ -4,7 +4,6 @@ class DriverRequestsController < ApplicationController
   end
 
   def show
-    # byebug
     @driver_request = DriverRequest.find(params[:id])
   end
 
@@ -18,18 +17,18 @@ class DriverRequestsController < ApplicationController
     end
 	end
 
-  def show_request 
-    # byebug                  
+  def show_request                  
     @cabuser = Cab.where(driver_id: current_user.driver.id).pluck(:id)
     @cabrequest = CabUser.where(cab_id: @cabuser)
   end
 
   def customer_request_approve
-    # byebug
-    # @cabrequest = CabUser.find_by(params[:id])
-    # @cabrequest.status == "Approved")
-    #   render 'customer_request_approve_path'
-    #   flash[:notice] = "Application has been approved"
+     # byebug
+    a=CabUser.where("cab_id = ? AND user_id = ?",params[:cab_id],params[:customer_id]).last
+     a.update(status: 'approved')
+     CabuserMailer.with(cabuser: a).new_cabuser_email.deliver_now
+    flash[:notice] = "Application has been approved"
+    redirect_to 'show_request_path'
   end
 
   def edit

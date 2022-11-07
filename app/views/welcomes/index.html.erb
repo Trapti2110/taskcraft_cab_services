@@ -1,2 +1,4 @@
-<h1>Welcome</h1>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<h2>Welcome to Taskcraft cab services!</h2>
+<%= link_to "Sign in", user_session_path %><br>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
+<%= link_to "Create new driver", new_driver_request_path %><br>
